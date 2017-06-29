@@ -1,0 +1,32 @@
+/* Grid */
+.container
+	position: relative
+	max-width: 1000px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+
+.row, .clearfix
+	&:before, &:after
+		display: table
+		content: ''
+		box-sizing: border-box
+	&:after
+		clear: both
+
+.w2 > .col
+	width: 50%
+.w3 > .col
+	width: 33.333333333%
+.w4 > .col
+	width: 25%
+.w5 > .col
+	width: 20%
+.w6 > .col
+	width: 16.666666667%
+	
+.col
+	display: block
+	float: left
+	min-height: 1px
+
