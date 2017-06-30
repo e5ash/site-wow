@@ -19,7 +19,7 @@ $transition-speed: .3s
 	box-sizing: border-box
 
 body
-	font: $font-size
+	font-size: $font-size
 	font-family: $font-family-1
 	color: $color-1
 	background: white
@@ -54,8 +54,12 @@ span
 .c
 	&-black
 		color: $color-2
+		a
+			color: $color-2
 	&-orange
 		color: $color-3
+		a
+			color: $color-3
 a
 	color: $color-1
 	text-decoration: none
@@ -77,8 +81,20 @@ a
 	letter-spacing: 3px
 	border-radius: 30px
 	cursor: pointer
+	background: white
+	color: $color-3
+	transition: background .3s
 	&_orange
-		background-color: #f7911f
+		color: $color-1
+		background-color: $color-3
+	&_hover-white
+		&:hover
+			color: $color-3
+			background-color: $color-1
+	&_hover-black
+		&:hover
+			color: $color-1
+			background-color: $color-2
 	&_big
 		width: 308px
 		height: 61px
@@ -103,8 +119,7 @@ a
 	font-weight: 900
 	text-align: center
 
-.phone, .email
-	display: block
+.phone
 	cursor: default
 
 
@@ -113,9 +128,14 @@ a
 	font-weight: 700
 	margin-bottom: 5px
 
-.time
+.time, .email
 	font-size: 16px
 
+.email
+
+	border-bottom: 1px solid $color-2
+	&:hover
+		border-bottom: 1px solid transparent
 
 .arrows
 	&-white
@@ -126,7 +146,13 @@ a
 		.slick-next
 			right: -(140px + 68px)
 
-
+	&-orange
+		.slick-arrow
+			@include sprite($arrow-orange)
+		.slick-prev
+			left: -(43px + 68px)
+		.slick-next
+			right: -(43px + 68px)
 
 .slick-arrow
 	&:before
@@ -136,10 +162,36 @@ a
 .slick-next
 	transform: rotate(180deg)
 
+
+::placeholder
+	color: white
+	font-size: 17px
+	font-family: $font-family-1
+
+
+.input, .button, .slick-slide
+	outline: none
+
+.input
+	width: 100%
+	display: block
+	line-height: 53px
+	height: 53px
+	background: rgba(255,255,255,.2)
+	padding-left: 21px
+	font-style: italic
+	transition: .3s
+	font-size: 17px
+	color: $color-2
+	&:focus
+		background: white
+	&:not(:focus)
+		color: $color-1
+
 .header
-	padding-top: 16px
 	padding-bottom: 250px
-	background: url('../img/bg/header.png') no-repeat center top
+	background: url('../img/bg/header.png') no-repeat center bottom
+	background-size: cover
 	&__content
 		margin-top: 80px
 		text-align: center
@@ -154,6 +206,11 @@ a
 
 	
 .panel
+	padding-top: 16px
+	transition: padding .3s
+	.container
+		padding-left: 0
+		padding-right: 0
 	&__logo
 		margin-right: 89px
 	&__button
@@ -163,6 +220,21 @@ a
 		float: right
 		text-align: right
 
+	&_fixed
+		z-index: 999
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		background-color: #223052
+		padding-top: 7px
+		padding-bottom: 5px
+		.container
+			padding-left: 15px
+			padding-right: 15px
+		+ .header__content
+			padding-top: 141px
+
 
 .partners
 	text-align: center
@@ -170,6 +242,14 @@ a
 	&_top
 	 	padding-top: 25px
 	 	padding-bottom: 15px
+	&_bottom
+		padding-top: 75px
+		padding-bottom: 60px
+		.partners
+			&__title
+				margin-bottom: 49px
+		.partner
+			margin-bottom: 20px
 
 .partner
 	display: inline-block
@@ -188,6 +268,7 @@ a
 	padding-top: 80px
 	padding-bottom: 100px
 	background: url('../img/bg/causes.png') no-repeat top center
+	background-size: cover
 	.container
 		padding-left: 47px
 		padding-right: 47px
@@ -450,7 +531,7 @@ a
 
 
 .org
-	padding: 15px 25px 50px 25px
+	padding: 15px 30px 50px 25px
 	background-color: #223052
 	&__head
 		margin-bottom: 15px
@@ -505,6 +586,13 @@ a
 			margin-bottom: 15px
 			&:last-of-type
 				margin-bottom: 0
+
+.photos
+	img
+		display: block
+		width: 100%
+		max-width: 100%
+
 .feedback
 	&__img
 		width: 130px
@@ -534,3 +622,516 @@ a
 
 .program
 	padding-top: 60px
+	padding-bottom: 85px
+	&__desc
+		margin-bottom: 55px
+	&__list
+		position: relative
+		height: 1260px
+	&__img
+		img
+			display: block
+	&__content
+		font-weight: 600
+		font-size: 18px
+		line-height: 24px
+		&:after
+			content: ''
+			display: block
+			width: 106px
+			height: 3px
+			background: $color-3
+			margin-top: 21px
+	&__img, &__content
+		display: inline-block
+		vertical-align: top
+	&__item
+		position: absolute
+		display: none
+		&:before
+			content: ''
+			z-index: -1
+			display: block
+			position: absolute
+		&:nth-of-type(1)
+			display: block
+			top: 21px
+			left: 131px
+			&:before
+				width: 422px
+				height: 18px
+				left: 0
+				top: 89px
+				background: url('../img/bg/lines/program-1.png')
+			.program__content
+				margin-top: 150px
+				margin-left: 12px
+		&:nth-of-type(2)
+			display: block
+			top: 0
+			right: 50px
+			&:before
+				width: 39px
+				height: 275px
+				top: 110px
+				left: 115px
+				background: url('../img/bg/lines/program-2.png')
+			.program__content
+				margin-top: 78px
+				margin-left: 22px
+		&:nth-of-type(3)
+			display: block
+			top: 310px
+			right: 62px
+			&:before
+				width: 75px
+				height: 203px
+				top: 103px
+				left: -11px
+				background: url('../img/bg/lines/program-3.png')
+			.program__content
+				margin-top: 78px
+				margin-left: 24px
+
+		&:nth-of-type(4)
+			display: block
+			top: 353px
+			left: 203px
+			&:before
+				width: 330px
+				height: 30px
+				top: 33px
+				left: 169px
+				background: url('../img/bg/lines/program-4-before.png')
+			&:after
+				content: ''
+				z-index: -1
+				display: block
+				position: absolute
+				width: 232px
+				height: 422px
+				top: 63px
+				left: -93px
+				background: url('../img/bg/lines/program-4-after.png')
+			.program__content
+				margin-top: 78px
+				margin-left: 27px
+
+		&:nth-of-type(5)
+			display: block
+			top: 582px
+			right: 121px
+			
+			.program__content
+				margin-top: -6px
+				margin-left: 21px
+
+		&:nth-of-type(6)
+			display: block
+			top: 692px
+			left: 17px
+			&:before
+				width: 130px
+				height: 614px
+				bottom: 184px
+				left: 90px
+				background: url('../img/bg/lines/program-6.png')
+
+			.program__content
+				margin-top: 5px
+				margin-left: 25px
+
+		&:nth-of-type(7)
+			display: block
+			top: 822px
+			right: 71px
+			&:before
+				width: 565px
+				height: 69px 
+				top: 15px
+				right: (96px + 106px)
+				background: url('../img/bg/lines/program-7.png')
+			.program__content
+				margin-top: 39px
+				margin-left: 30px
+
+		&:nth-of-type(8)
+			display: block
+			top: 945px
+			right: 324px
+			&:before
+				width: 262px
+				height: 238px
+				bottom: 82px
+				right: (148px + 106px)
+				background: url('../img/bg/lines/program-8.png')
+			.program__content
+				margin-top: 39px
+				margin-left: 30px
+		&:nth-of-type(9)
+			display: block
+			top: 1043px
+			left: 41px
+			&:before
+				width: 10px
+				height: 376px
+				bottom: 78px
+				left: 100px
+				background: url('../img/bg/lines/program-9.png')
+			.program__content
+				margin-top: 122px
+				margin-left: 23px
+		&:nth-of-type(10)
+			display: block
+			top: 1121px
+			right: 94px
+			&:before
+				width: 14px
+				height: 298px
+				bottom: 56px
+				left: 65px
+				background: url('../img/bg/lines/program-10.png')
+			.program__content
+				margin-top: -15px
+				margin-left: 23px
+
+.calc
+	padding-top: 60px
+	padding-bottom: 28px
+	background: $color-3
+	&__title
+		margin-bottom: 48px
+	&__table
+		padding-left: 50px
+		padding-right: 50px
+	&__item
+		margin-bottom: 32px
+		&:last-of-type
+			margin-bottom: 0
+	&__icon, &__content
+		display: inline-block
+		vertical-align: middle
+	&__icon
+		width: 40px
+		height: 40px
+		position: relative
+		margin-top: 4px
+		i
+			top: -10px
+			left: -10px
+			position: absolute
+			transform: scale(.68)
+	&__subtitle
+		font-weight: 900
+		margin-bottom: 3px
+	&__data
+		.col
+			&:nth-of-type(2)
+				margin-left: 27px
+				padding-top: 45px
+
+	&__content
+		margin-left: 21px
+
+	&__form
+		width: 308px
+		float: right
+		.input
+			margin-bottom: 12px
+		.button
+			margin-top: 21px
+			// &:hover
+			// 	color: white
+			// 	background: rgba(255, 255, 255, 0.2)
+
+.order
+	padding-top: 50px
+	padding-bottom: 63px
+	background: url('../img/bg/order.jpg') center
+	background-size: cover
+	&__desc
+		margin-bottom: 82px
+	&__list
+		padding-left: 60px
+	&__item
+		margin-bottom: 60px
+		&:nth-of-type(even)
+			margin-left: (176px + 106px)
+		&:nth-of-type(3)
+			.order__subtitle
+				margin-top: 20px
+		&:nth-of-type(4)
+			.order__icon
+				i
+					margin-left: 25px
+		&:nth-of-type(5)
+			.order__icon
+				i
+					margin-left: 15px
+		&:nth-of-type(6)
+			.order__subtitle
+				margin-top: 30px
+		&:last-of-type
+			margin-bottom: 0
+	&__icon, &__content
+		display: inline-block
+		vertical-align: top
+	&__icon
+		width: 140px
+		margin-right: 25px
+	&__content
+		li
+			list-style: none
+			display: block
+	&__subtitle
+		font-size: 24px
+		font-weight: 600
+		line-height: 30px
+		+ ul
+			margin-top: 50px
+			margin-left: 68px
+			li
+				line-height: 24px
+				margin-bottom: 20px
+				font-weight: 600
+				position: relative
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: calc(50% - 6.5px)
+					left: -(23px + 13px)
+					width: 13px
+					height: 13px
+					background: white
+					border-radius: 50%
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					width: 1px
+					height: 130%
+					top: 50%
+					left: -29.5px
+					background: white
+				&.dos
+					&:after
+						height: 160%
+				&.tres
+					&:after
+						height: 100%
+				&:last-of-type
+					margin-bottom: 0
+					&:after
+						display: none
+
+.company
+	background: url('../img/bg/company.png') center
+	background-size: cover
+	padding-top: 80px
+	&__desc
+		margin-bottom: 75px
+	&__subtitle
+		font-size: 24px
+		line-height: 30px
+		font-weight: 600
+		margin-bottom: 55px
+	&__subtitle, &__table, &__text
+		margin-left: 85px
+		margin-right: 85px
+	
+	&__table
+		.company
+			&__subtitle
+				margin-left: 0
+				margin-right: 0
+				margin-bottom: 45px
+		p
+			line-height: 22px
+			width: 345px
+			font-weight: 600
+		.col
+			&:nth-of-type(2)
+				padding-left: 90px
+	&__right
+		padding-top: 10px
+
+	&__text
+		margin-top: 60px
+		padding-top: 37px
+		padding-bottom: 37px
+		text-align: center
+		font-weight: 600
+		line-height: 22px
+		padding-left: 30px
+		padding-right: 30px
+		border-top: 1px solid $color-3
+		border-bottom: 1px solid $color-3
+		margin-bottom: 118px
+		strong
+			font-weight: 900
+
+	
+.num
+	margin-bottom: 25px
+	&:after
+		content: ''
+		display: block
+		width: 106px
+		height: 5px
+		margin-top: 17px
+		background-color: $color-3
+	&__count
+		font-size: 48px
+		line-height: 48px
+		font-weight: 900
+	&__text, &__date
+		font-size: 18px
+		line-height: 24px
+	&__date
+		font-weight: 700
+
+
+
+.team
+	padding-bottom: 90px
+	&__title
+		margin-bottom: 118px
+	.slick-arrow
+		top: 30%
+	.slick-prev
+		left: -(43px + 68px)
+	.slick-next
+		right: -(43px + 68px)
+.persona
+	padding-left: 55px
+	&__img
+		margin-right: 22px
+		width: 208px
+		margin-bottom: 22px
+		img
+			max-width: 208px
+			display: block
+	&__title, &__desc
+		line-height: 18px
+	&__title
+		font-size: 18px
+		font-weight: 900
+		margin-bottom: 3px
+	&__quote
+		width: 150px
+		font-weight: 600
+		line-height: 21px
+		font-style: italic
+		&:before
+			content: ''
+			display: block
+			position: relative
+			width: 44px
+			height: 6px
+			background-color: $color-3
+			margin-bottom: 22px
+
+.reviews
+	&__list
+		margin-top: 60px
+
+	.slick-arrow
+		top: 40%
+
+
+
+.review
+	border: 1px solid #c8c8c8 
+	padding: 75px 44px 35px 40px
+	&__quote
+		margin-left: 70px
+		width: 420px
+		font-size: 26px
+		line-height: 30px
+		font-weight: 600
+		font-style: italic
+		position: relative
+		&:before
+			opacity: .7
+			content: '«'
+			top: -20px
+			left: -93px
+			position: absolute
+			font-size: 150px
+			font-weight: 900
+			color: #f0f0f0
+			font-style: normal
+	&__logo
+		float: right
+	&__head
+		margin-bottom: 40px
+	&__body
+
+		line-height: 21px
+		padding-right: 25px
+ul.desc
+	li
+		font-weight: 600
+		display: block
+		list-style-type: none
+		line-height: 22px
+		margin-bottom: 20px
+		position: relative
+		margin-left: 39px
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			background: $color-3
+			width: 10px
+			height: 10px
+			top: 8px
+			left: -34px
+			border-radius: 50%
+		&:last-of-type
+			margin-bottom: 0
+
+.footer
+	margin-top: 70px
+	&__top, &__bottom
+		margin-left: 15px
+		margin-right: 15px
+	&__top
+		padding-top: 39px
+		padding-bottom: 23px
+		border-bottom: 1px solid $color-3
+	&__bottom
+		padding-top: 33px
+		padding-bottom: 25px
+		font-size: 14px
+		line-height: 24px
+	&__socials
+		font-size: 0
+		padding-top: 15px
+		padding-left: 80px
+		li
+			display: inline-block
+			vertical-align: top
+			margin-right: 35px
+			&:last-of-type
+				margin-right: 0
+		a
+			&:hover
+				opacity: .6
+	&__contacts
+		text-align: right
+		padding-top: 9px
+	&__org
+		padding-left: 80px
+	&__links
+		font-size: 0
+		text-align: right
+		li
+			display: block
+			list-style-type: none
+		a
+			font-size: 14px
+			border-bottom: 1px solid $color-2
+			&:hover
+				border-bottom: 1px solid transparent

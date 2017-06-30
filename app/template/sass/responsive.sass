@@ -1,4 +1,565 @@
-@media screen and (max-width: 768px)
-	.w2, .w3, .w4, .w5, .w6
+@media screen and (max-width: 1225px)
+	.container
+		max-width: 925px
+	.arrows
+		&-white, &-orange
+			.slick-prev
+				left: -75px
+			.slick-next
+				right: -75px
+
+	.partners
+		&_top
+			padding-bottom: 5px
+	.partner
+		margin-left: 20px
+		margin-right: 20px
+		margin-bottom: 20px
+
+
+	.festival
+		&__list
+			padding-left: 0
+			padding-right: 0
+
+
+	.program__item
+		&:nth-of-type(2)
+			right: 0
+		&:nth-of-type(3)
+			right: 12px
+		&:nth-of-type(4)
+			.program__content
+				margin-left: 10px
+
+		&:nth-of-type(5)
+			right: calc(121px - 50px)
+
+
+	.calc
+		&__table
+			padding-left: 0
+			padding-right: 0
+
+	.order
+		&__desc
+			margin-bottom: 40px
+		&__list
+			padding-left: 0
+			margin-left: -2.5%
+			margin-right: -2.5%
+		&__icon
+			display: block
+			text-align: center
+			width: 100%
+		&__content
+			display: block
+			br
+				display: none
+		&__subtitle
+			text-align: center
+			margin-top: 5px !important
+			font-size: 20px
+		&__item
+			float: left
+			width: 50%
+			height: 360px
+			padding-left: 2.5%
+			padding-right: 2.5%
+			margin-bottom: 0
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 50px
+			.icon
+				margin-left: 0 !important
+			&:nth-of-type(even)
+				margin-left: 0
+			&:nth-of-type(1), &:nth-of-type(2)
+				height: 360px
+			&:nth-of-type(3), &:nth-of-type(4)
+				height: 220px
+			&:nth-of-type(5), &:nth-of-type(6)
+				height: 275px
+				margin-bottom: 10px
+			&:nth-of-type(7)
+				height: auto
+				width: 100%
+		&__icon
+			display: block
+			line-height: 126px
+			height: 126px
+			margin-right: 0
+		ul
+			margin-top: 5px
+			margin-left: 0
+			li
+				margin-bottom: 5px
+				margin-left: 38px
+				&:before
+					left: -20px
+					width: 8px
+					height: 8px
+					top: 5px
+				&:after
+					display: none
+
+	.team
+		width: 790px
+		margin-left: auto
+		margin-right: auto
+	.persona
+		padding-left: 0
+
+	.reviews__list
+		width: 790px
+		margin-left: auto
+		margin-right: auto
+@media screen and (max-width: 960px)
+	body
+		font-size: 16px
+	.slick-arrow
+		display: none !important
+
+	.container
+		max-width: 100%
+
+
+	.title
+		font-size: 32px
+	
+	.subtitle
+		font-size: 24px
+	
+	.button
+		&_big
+			width: 100%
+			max-width: 308px
+
+	.header
+		&__content
+			margin-top: 20px
+		&__title
+			line-height: normal
+
+	.panel
+		text-align: center
+		.col
+			float: none
+			max-width: 280px
+			width: 100%
+			margin-left: auto
+			margin-right: auto
+		&__logo
+			img
+				width: 100%
+				display: block
+				margin-left: auto
+				margin-right: auto
+		.button
+			margin-left: auto
+			margin-right: auto
+
+		&__contacts
+			text-align: center
+
+	.causes
+		padding-top: 20px
+		padding-bottom: 40px
+		.container
+			padding-left: 15px
+			padding-right: 15px
+		&__desc
+			margin-top: 0
+			margin-bottom: 20px
+
+	.cause
+		margin-bottom: 20px
+
+		&:last-of-type
+			margin-bottom: 0
+		&-2
+			.cause__text
+				margin-bottom: 10px
+		&-3
+			margin-top: 30px
+		&__count
+			font-size: 40px
+			margin-right: 10px
+		&__subtitle
+			font-size: 18px
+			line-height: normal
+		&__icons
+			width: 100%
+			height: auto
+		&__head
+			margin-bottom: 5px
+		&__icon
+			display: block
+			position: relative
+			top: auto
+			left: auto
+			bottom: auto
+			right: auto
+			width: 100%
+			margin-bottom: 10px
+			&:last-of-type
+				margin-bottom: 0
+			&:before, &:after, &-title:before
+				display: none
+			&-title
+				margin-bottom: 0
+				font-size: 18px
+			&-text
+				width: 100% !important
+				br
+					display: none
+				p
+					margin-bottom: 0
+		&__text
+			margin-right: 0 !important
+			width: 100% !important
+			br
+				display: none
+			p
+				margin-bottom: 5px !important
+				&:last-of-type
+					margin-bottom: 0 !important
+		&__events
+			display: none
+
+			
+	.map
+		display: none
+
+	.festival
+		padding-top: 20px
+		padding-bottom: 0
+		background: none
+		text-align: center
+		.col
+			float: none
+			display: inline
+			margin-left: 0
+			margin-right: 0
+			padding-top: 0 !important
+			text-align: left
+			width: auto
+		&__list
+			margin-top: 25px
+		&__item
+			display: inline-block
+			margin-bottom: 30px !important
+			vertical-align: top
+			width: 215px
+			margin-right: 10px !important
+			margin-left: 10px !important
+		&__subtitle
+			width: 125px
+			text-align: right
+		&__button
+			display: none
+		&__icon
+			height: 62px
+			line-height: 62px
+			margin-bottom: 10px
+			margin-right: 0
+		&__body
+			font-size: 16px
+			line-height: normal
+			text-align: center
+			br
+				display: none
+	.trusted
+		padding-top: 20px
+		padding-bottom: 40px
+		&__subtitle
+			margin-top: 0
+			margin-bottom: 20px
+			font-size: 18px
+	.org
+
+
+	.program
+		text-align: center
+		padding-top: 20px
+		padding-bottom: 20px
+		&__desc
+			margin-bottom: 20px
+		&__list
+			height: auto
+		&__item
+			display: inline-block !important
+			position: relative
+			top: auto !important
+			left: auto !important
+			bottom: auto !important
+			right: auto !important
+			margin-bottom: 20px
+			margin-left: 10px
+			margin-right: 10px
+			width: 140px
+			&:before, &:after
+				display: none !important
+		&__img
+			display: block !important
+			width: 128px
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 5px
+			img
+				width: 100%
+		&__content
+			display: block !important
+			margin-top: 0 !important
+			margin-left: 0 !important
+			text-align: center
+			&:after
+				display: none
+
+	.calc
+		padding-top: 20px
+		padding-bottom: 20px
+		&__title
+			margin-bottom: 15px
+		&__data
+			display: none
+		&__form
+			float: none
+			max-width: 300px
+			width: 100%
+			margin-left: auto
+			margin-right: auto
+			.button
+				max-width: 100%
+				width: 100%
+				margin-top: 0
+
+	.order
+		padding-top: 20px
+		padding-bottom: 40px
+		&__desc
+			margin-bottom: 10px
+		&__list
+			margin-left: 0
+			margin-right: 0
+		&__item
+			float: none
+			display: block
+			width: 100%
+			height: auto !important
+			margin-bottom: 20px
+			padding-left: 0
+			padding-right: 0
+		ul
+			li
+				margin-left: 21px
+				line-height: normal
+				font-size: 16px
+
+	.company
+		padding-top: 20px
+		padding-bottom: 40px
+		&__desc
+			margin-bottom: 5px
+		&__subtitle
+			text-align: center
+			font-size: 20px
+			margin-bottom: 10px
+			br
+				display: none
+		&__subtitle, &__table, &__text
+			margin-left: 0
+			margin-right: 0
+		&__table
+			p
+				width: 100%
+			.col
+				float: none
+				width: 100%
+				padding-left: 0 !important
+			.company__subtitle
+				margin-bottom: 10px
+				text-align: left
+				
+			.desc
+				li
+					margin-bottom: 5px
+					margin-left: 21px
+					line-height: normal
+					font-size: 16px
+					&:after
+						left: -20px
+						top: 7px
+						width: 8px
+						height: 8px
+						background: white
+		&__text
+			margin-top: 30px
+			padding: 20px
+			margin-bottom: 30px
+			br
+				display: none
+
+	.num
+		text-align: center
+		&:after
+			margin-left: auto
+			margin-right: auto
+	.team
+		padding-bottom: 0
+		width: 100%
+		&__title
+			margin-bottom: 20px
+	.persona
+		text-align: center
+		&__data
+			width: 100%
+		&__img
+			margin-left: auto
+			margin-right: auto
+		&__quote
+			display: none
+	.partners
+		&_bottom
+			padding-top: 20px
+			padding-bottom: 20px
+			.partners
+				&__title
+					margin-bottom: 15px
+	.reviews
+		&__list
+			width: 100%
+
+	.review
+		padding: 10px
+		&__quote
+			margin-left: 20px
+			font-size: 18px
+			line-height: normal
+			width: calc(100% - 160px)
+			&:before, br
+				display: none
+		&__quote, &__logo
+			float: none
+			display: inline-block
+			vertical-align: middle
+		&__head
+			margin-bottom: 10px
+	.footer
+		margin-top: 20px
+		&__top, &__bottom
+			margin-left: 0
+			margin-right: 0
+
+@media screen and (max-width: 860px)
+	.org
+		padding: 15px
+		&__data
+			width: 100%
+		&__title
+			text-align: center
+			br
+				display: none
+		&__list, &__logo
+			display: none
+	.feedback
+		&__content
+			padding-top: 0
+			width: calc(100% - 155px)
+		&__author
+			padding-left: 20px
+			br
+				display: none
+	.footer
+		&__top
+			padding-top: 15px
+			border-bottom: none
+			padding-bottom: 0
+		&__bottom
+			padding-top: 10px
+			padding-bottom: 15px
+		&__logo
+			margin-bottom: 0
+		&__socials
+			padding-top: 5px
+			padding-bottom: 5px
+		.col
+			float: none
+			max-width: 280px
+			width: 100%
+			margin-left: auto
+			margin-right: auto
+			text-align: center
+			padding-left: 0
+			margin-bottom: 5px
+			&:last-of-type
+				margin-bottom: 0
+@media screen and (max-width: 800px)
+	.partners
+		&__list
+			margin-left: -5px
+			margin-right: -5px
+		&_top
+			padding-bottom: 15px
+	.partner
+		margin: 0 5px 10px !important
+@media screen and (max-width: 540px)
+	.photos
 		.col
 			width: 100%
+			float: none
+	.review
+		&__quote, &__logo
+			display: block
+		&__logo
+			img
+				margin-left: auto
+				margin-right: auto
+		&__quote
+			width: 100%
+			margin-top: 10px
+			margin-left: 0
+			text-align: center
+		&__body
+			padding-right: 0
+@media screen and (max-width: 440px)
+	.cause
+		&__count, &__subtitle
+			display: block
+		&__subtitle
+			margin-bottom: 10px
+			font-size: 20px
+			br
+				display: none
+	.cause
+		margin-bottom: 30px
+	.feedback
+		&__img
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 15px
+			float: none
+		&__content
+			width: 100%
+			br
+				display: none
+		&__author
+			padding-left: 10px
+@media screen and (max-width: 375px)
+	.program
+		&__item
+			margin-left: 5px
+			margin-right: 5px
+			width: 125px
+		&__img
+			width: 125px
+		&__content
+			font-size: 15px
+			line-height: normal
+@media screen and (max-width: 350px)
+	.partners_top
+		display: none
+	.partners_bottom
+		.partner
+			padding-left: 5px !important
+			padding-right: 5px !important
