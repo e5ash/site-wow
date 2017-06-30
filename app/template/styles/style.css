@@ -1075,6 +1075,8 @@ a {
           top: 50%;
           left: -29.5px;
           background: white; }
+        .order__subtitle + ul li.uno:after {
+          height: 250%; }
         .order__subtitle + ul li.dos:after {
           height: 160%; }
         .order__subtitle + ul li.tres:after {
